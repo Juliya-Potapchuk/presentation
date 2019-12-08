@@ -1,0 +1,470 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css">
+  
+<!-- MY STYLES -->
+    <style type="text/css">
+      .p-shapes {
+      text-align: start;
+      }
+
+      .span-shapes {
+      color: yellow;
+      text-decoration: underline;
+      } 
+ 
+      .wrapper-animation {
+      height: 500px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      }
+
+/* Animation girl */
+      #svgContainer {
+      width: 600px;
+      height: 500px;
+      display: inline-block;
+      vertical-align: top;
+      margin-right: -168px;
+      }
+
+/* Animation cat */
+      .tuna {
+      animation: walk-cycle 1s steps(12) infinite;
+      background: url(http://stash.rachelnabors.com/img/codepen/tuna_sprite.png) 0 0 no-repeat; 
+      height: 200px;
+      width: 400px;
+      margin: 100px auto 0;
+      transform: rotate(180deg) rotateX(180deg) scale(2.5);
+      }
+
+      @keyframes walk-cycle {  
+      0% {
+        background-position: 0 0; 
+      } 
+      100% {
+        background-position: 0 -2391px; 
+      } 
+      } 
+   </style> 
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+<!-- 1 slide -->
+        <section>
+          <h1 style="font-size: 300px;">SVG</h1>
+          <h2>Scalable Vector Graphics</h2>
+        </section> 
+
+<!-- 2 slide -->
+				<section>
+          <h2>What is SVG?</h2>
+          <p>SVG is a vector graphic format-based on XML and is used to display a variety of graphics 
+            on the Web and other environments.</p>
+       </section>
+
+<!-- 3 slide -->
+       <section>
+          <img src="./images/euronews.jpg" alt="site-euronews" width="1000" height="400">
+       </section>
+
+<!-- 4 slide-->      
+        <section> 
+          <h2>Coordinate Systems</h2>
+          <p>x = 4; y = 2</p>
+          
+          <div style="display: flex; justify-content: space-between;">
+            <div>
+              <img src="./images/coordinates_normal.jpg" alt="coordinate-cartesian" width="400" height="400">
+              <h3>Cartesian</h3>
+            </div>
+
+            <div>
+              <img src="./images/coord_svg.jpg" alt="coordinate-svg" width="400" height="400">
+              <h3>SVG</h3>
+            </div>
+          </div>
+        </section>
+
+<!-- 5 slide-->      
+        <section> 
+          <section> 
+            <h2>Basic Shapes</h2>
+          </section> 
+<!-- 5.1 slide -->
+          <section>  
+            <img src="./images/shapes.jpg" alt="shapes" width="1200" height="500">
+          </section>  
+ <!-- 5.2 slide -->
+          <section>  
+            <h3>Rectangle</h3><hr>
+            <p class="p-shapes"><span class="span-shapes">x / y </span>- The x/y positions of the top left corner of the rectangle</p><hr>
+            <p class="p-shapes"><span class="span-shapes">rx / ry </span> - The x/y radius of the corners of the rectangle</p><hr>
+
+            <pre><code data-trim data-noescape>
+              < svg width="400" height="200">
+              < rect x="120" y="20" rx="20" ry="20" width="150" height="150"
+              style="fill:red; stroke:white; stroke-width:5;"/> < /svg>
+            </code></pre>
+              
+            <svg width="400" height="200" style="border: 2px solid white;  margin: 0 auto;">
+              <rect x="120" y="20" rx="20" ry="20" width="150" height="150"
+              style="fill:red; stroke:white; stroke-width:5;"/>
+            </svg>
+          </section>
+ <!-- 5.3 slide -->
+          <section>  
+            <h3>Circle</h3><hr>
+            <p class="p-shapes"><span class="span-shapes"> r </span>- The radius of the circle</p><hr>
+            <p class="p-shapes"><span class="span-shapes">cx / cy </span> - The x/y positions of the center of the circle</p><hr>
+
+            <pre><code data-trim data-noescape>
+              < svg width="400" height="200"> 
+              < circle cx="185" cy="100" r="80" 
+              stroke="white" stroke-width="3" fill="red"/>
+              < /svg>
+            </code></pre>
+              
+            <svg width="400" height="200" style="border: 2px solid white;  margin: 0 auto;">
+              <circle cx="185" cy="100" r="80" stroke="white" stroke-width="3" fill="red">
+            </svg>
+          </section>
+  <!-- 5.4 slide -->
+          <section>  
+            <h3>Ellipse</h3><hr>
+            <p class="p-shapes"><span class="span-shapes">rx / ry </span>- The x/y radiuses of the ellipse</p><hr>
+            <p class="p-shapes"><span class="span-shapes">cx / cy </span> - The x/y positions of the center of the ellipse</p><hr>
+
+            <pre><code data-trim data-noescape>
+              < svg width="400" height="200">
+              < ellipse cx="200" cy="100" rx="150" ry="80" 
+              stroke="white" stroke-width="3" fill="red"/>
+              < /svg>
+            </code></pre>
+
+            <svg width="400" height="200" style="border: 2px solid white;  margin: 0 auto;">
+              <ellipse cx="200" cy="100" rx="150" ry="80" stroke="white" stroke-width="3" fill="red">
+            </svg>
+          </section>
+  <!-- 5.5 slide -->
+          <section>  
+            <h3>Line</h3><hr>
+            <p class="p-shapes"><span class="span-shapes">x1 / y1 </span>- The x/y positions of point 1</p><hr>
+            <p class="p-shapes"><span class="span-shapes">x2 / y2 </span> - The x/y positions of point 2</p><hr>
+
+            <pre><code data-trim data-noescape>
+              < svg width="400" height="200">
+              < line x1="15" y1="25" x2="350" y2="180" 
+              stroke="red" stroke-width="7"/>
+              < /svg>
+            </code></pre>
+
+            <svg width="400" height="200" style="border: 2px solid white;  margin: 0 auto;">
+              <line x1="15" y1="25" x2="350" y2="180" stroke="red" stroke-width="7">
+            </svg>
+          </section>
+ <!-- 5.6 slide -->
+          <section>  
+            <h3>Polyline</h3><hr>
+            <p class="p-shapes"><span class="span-shapes">points </span>- A list, where each point must contain two numbers, an x coordinate and a y coordinate</p><hr>
+           
+            <pre><code data-trim data-noescape>
+              < svg width="400" height="200">
+              < polyline points="20,40 60,45 80,60 100,140 180,160 320,120"
+               style="fill:none; stroke: red; stroke-width:7"/>
+              < /svg>
+            </code></pre>
+
+            <svg width="400" height="200" style="border: 2px solid white;  margin: 0 auto;">
+              <polyline points="20,40 60,45 80,60 100,140 180,160 320,120" style="fill:none; stroke: red; stroke-width:7">
+            </svg>
+          </section>  
+  <!-- 5.7 slide -->
+          <section>  
+            <h3>Polygon</h3><hr>
+            <p class="p-shapes"><span class="span-shapes">points </span>- A list, where each point must contain two numbers, an x coordinate and a y coordinate</p><hr>
+          
+            <pre><code data-trim data-noescape>
+              < svg width="400" height="200">
+                < polygon points="160,10 120,198 320,78 60,78 320,198"
+                style="fill:red; stroke:white; stroke-width:5;"/>
+              < /svg>
+            </code></pre>
+  
+            <svg width="400" height="200" style="border: 2px solid white;  margin: 0 auto;">
+              <polygon points="160,10 120,198 320,78 60,78 320,198"
+              style="fill:red; stroke:white; stroke-width:5;"/>
+            </svg>        
+          </section>  
+<!-- 5.8 slide -->
+          <section>  
+            <h3>Path</h3><hr>
+            <p class="p-shapes"><span class="span-shapes">d </span>- A list of commands and parameters used by those commands</p><hr>
+            
+            <pre><code data-trim data-noescape>
+              < svg width="400" height="200">
+                < path d="M200 10 L130 180 L275 180 Z" 
+                fill="red" stroke="white" stroke-width="5"/>
+              < /svg>
+            </code></pre>
+                
+            <svg width="400" height="200" style="border: 2px solid white;  margin: 0 auto;">
+              <path d="M200 10 L130 180 L275 180 Z" style="fill:red; stroke:white; stroke-width:5;"/>
+            </svg>     
+          </section>  
+        </section>
+
+<!-- 6 slide-->
+        <section>
+          <section>
+            <h2>How to add svg to the page ?</h2>
+          </section>
+<!-- 6.1 slide -->
+          <section>
+            <h3>Svg insertion methods:</h3>
+            <span style="color:yellow">- Img</span><hr>
+            <span style="color:yellow">- Background-image</span><hr>
+            <span style="color:yellow">- Inline Svg</span><hr>
+            <span style="color:yellow">- Object</span>
+          </section>
+<!-- 6.2 slide -->
+          <section>
+            <h3>Img or background-image</h3>
+
+            <pre><code data-trim data-noescape>
+              < img src="icon.svg" alt="Just a simple icon">
+
+              .icon {
+              background-image: url('icon.svg');
+              height: 64px;
+              width: 64px;
+              }
+            </code></pre>
+
+            <div style="display: flex;">
+              <div style="width: 500px;">
+                 <p style="color:yellow">Advantages:</p>
+                  <ul>
+                    <li>Simple use</li>
+                    <li>Caching</li>
+                  </ul>
+              </div>
+               
+              <div style="width: 500px;">
+                <p style="color:yellow">Disadvantages:</p>
+                <ul>
+                  <li>No possible to interact with graphics</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+  <!-- 6.3 slide -->
+          <section>
+            <h3>Object</h3>
+                
+            <pre><code data-trim data-noescape>
+              < object type="image/svg+xml" data="your.svg" id="object"
+              class="icon"> < /object>
+            </code></pre>
+
+            <div style="display: flex;">
+              <div style="width: 500px;">
+                <p style="color:yellow">Advantages:</p>
+                  <ul>
+                    <li>Can be manipulated with CSS</li>
+                    <li>Scripts, animation work( if they are described inside SVG)</li>
+                  </ul>
+              </div>
+              
+              <div style="width: 500px;">
+                <p style="color:yellow">Disadvantages:</p>
+                <ul>
+                  <li> No caching</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+<!-- 6.4 slide -->
+          <section>
+            <h3> Inline Svg</h3>
+
+            <pre><code data-trim data-noescape>
+              < svg height="100" width="500" class="icon">
+                < ellipse cx="240" cy="50" rx="220" ry="30" fill="red" />
+                < ellipse cx="240" cy="50" rx="190" ry="20" fill="white"/>
+              < /svg>
+            </code></pre>
+
+            <div style="display: flex;">
+              <div style="width: 500px;">
+                <p style="color:yellow">Advantages:</p>
+                  <ul>
+                    <li>The full potential of SVG is available</li>
+                    <li>No loading of external files</li>
+                  </ul>
+              </div>
+
+              <div style="width: 500px;">
+                <p style="color:yellow">Disadvantages:</p>
+                  <ul>
+                    <li>No caching</li>
+                    <li>Page code gets dirty</li>
+                  </ul>
+              </div>
+            </div>
+          </section>
+        </section>
+
+<!-- 7 slide -->
+        <section>
+          <section >
+            <h2>Animation</h2>  
+          </section>
+<!-- 7.1 slide-->
+          <section >     
+            <div>
+              <span style="color:yellow">- CSS animation</span><br><hr>
+              <span style="color:yellow">- Tag < animate></span><br><hr>
+              <span style="color:yellow">- JavaScript</span>
+            </div>
+                
+            <div class="wrapper-animation">
+              <div class="tuna"></div>
+              <div id="svgContainer"></div>
+            </div>  
+          </section>
+        </section>
+
+<!-- 8 slide-->
+        <section>
+          <section>
+            <h2>Advantages</h2>
+          </section>
+<!-- 8.1 slide -->
+        <section>
+          <h3 style="text-transform: none">1. Scalability</h3>
+
+          <div style="display: flex; justify-content: space-between;" style="width: 700px;">
+            <figure>
+              <img src="./images/twitter_icon_small.jpg" alt="image-svg-small" width="450" height="450">
+              <figcaption style="text-transform: uppercase;">Svg</figcaption>
+            </figure>
+
+            <figure>
+              <img src="./images/twitter_icon_small.jpg" alt="image-png-small" width="450" height="450">
+              <figcaption style="text-transform: uppercase;">Png</figcaption>
+            </figure>
+          </div>
+          </section>
+<!-- 8.2 slide -->
+          <section>
+            <div style="display: flex; justify-content: space-between;" style="width: 700px;">
+              <figure>
+                <img src="./images/twitter_icon_big_svg.jpg" alt="image-svg-big" width="450" height="450">
+                <figcaption style="text-transform: uppercase;">Svg</figcaption>
+              </figure>
+
+              <figure>
+                <img src="./images/twitter_icon_big_png.jpg" alt="image-png-big" width="450" height="450">
+                <figcaption style="text-transform: uppercase;">Png</figcaption>
+              </figure>
+            </div>
+          </section>
+<!-- 8.3 slide -->      
+          <section>
+            <h3 style="text-transform: none">2. Interactivity and Programmability</h3>
+            <img src="./images/svg_in_sketch.jpg" alt="screenshot-svg-sketch" width="1200" height="500">
+          </section> 
+<!-- 8.4 slide-->     
+          <section> 
+            <h3 style="text-transform: none">3. Compact file-size</h3>
+            <img src="./images/size_images.jpg" alt="size-images" width="1200" height="500">
+            </section> 
+<!-- 8.5 slide-->      
+          <section>
+            <h3 style="text-transform: none">4. S<span style="text-transform: uppercase;">eo</span> friendly</h3>
+            <img src="./images/seo-friendly-websites.jpg" alt="icon-seo-friendly-websites" width="400" height="200">
+            <p>Making a website SEO friendly means the search engines can crawl each page on the
+            website efficiently, interpret the content effectively, and index it in their database.</p>      
+          </section> 
+        </section> 
+
+<!-- 9 slide-->
+        <section>
+          <h2>cross-browser compatibility</h2>
+          <img src="./images/browsers.jpg" alt="browser-icons" width="700" height="400">
+        </section> 
+
+<!-- 10  slide-->
+        <section>
+          <h3>Disadvantages</h3>
+          <span style="color:yellow">- No support for older browsers</span><hr>
+          <span style="color:yellow">- File size is growing rapidly</span><hr>
+          <span style="color:yellow">- No support for three-dimensional graphics</span>
+        </section>
+
+<!-- 11  slide-->
+        <section>
+          <h3>Thanks for watching !</h3>
+        </section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+    </script>
+
+  
+    <script src="https://labs.nearpod.com/bodymovin/demo/markus/walk/lottie.min.js"></script>
+
+    <script>
+      var svgContainer = document.getElementById('svgContainer');
+      var animItem = bodymovin.loadAnimation({
+        wrapper: svgContainer,
+        animType: 'svg',
+        loop: true,
+        path: 'https://labs.nearpod.com/bodymovin/demo/markus/walk/girl.json'
+      });
+      animItem.setSubframe(false);
+      animItem.setSpeed(0.8)
+      window.onresize = function(){
+        animItem.resize()
+      }
+    </script>
+    
+	</body>
+</html>
