@@ -45,10 +45,10 @@ There are four basic methods: Img- Background-image, Object and Inline Svg.
 ## (Slide – Img or background-image)
 I  have combined these two methods into one slide, because they are really very similar. In both cases, you need to write the path to the svg file. Here no possible to work with graphics, so such methods  are best suited for content images that do not need interaction: logos, diagrams.
 ## (Slide - Object)
-In the object tag you also write the file path . Can be manipulated with CSS. Scripts, animation work, if they are described inside SVG. This method is suitable when you need to insert some kind of interactive elements: toys, graphics and various complex objects
+In the object tag you also write the file path. You can manipulate an object using CSS. Scripts, animation work, if they are described inside SVG. This method is suitable when you need to insert some kind of interactive elements: toys, graphics and various complex objects
 ## (Slide – Inline svg)
 And of course the svg tag itself. In this method you already need to write the code of image.
-We can use all the features of svg(change size, animate),  because we have access to all its attributes. Most often this method is used for icons, buttons, small animations, in which you can easily change the different properties of svg. If the animation is harder it is better to use the object tag, because a large svg file is bad readable.
+We can use all the features of svg(change size, animate), because we have access to all its attributes. Most often this method is used for icons, buttons, small animations, in which you can easily change the different properties of svg. If the animation is harder it is better to use the object tag, because a large svg file is bad readable.
 ## (Slide – “Animation”)
 Animation.
 ## (Slide - Ways to add animation)
