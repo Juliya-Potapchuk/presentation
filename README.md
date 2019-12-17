@@ -18,26 +18,6 @@ Points x and y are set identical values on these two pictures. The difference in
 Basic Shapes.
 ## (Slide - Diagram of basic shapes)
 SVG has some predefined shape elements that can be used by developers: Rectangle, Circle, Ellipse, Line, Polyline, Polygon and Path. 
-Next I will talk about each shape in details.
-## (Slide - Rectangle)
-On the slide you can see an example of the code, its attributes and how it is displayed.
-So The rect element draws a rectangle on the screen. It has 6 basic attributes. They indicate: the position of the top left corner, the radius of the corners and  the width / height of the rectangle.
- By the way, the style attribute allows you to set additional style information. It can be used with all shapes.
-## (Slide -  Circle)
-The circle element draws a circle on the screen. It takes 3 basic parameters. They define the radius and the position of the center of the circle.
- The style attribute can be ignored.
-## (Slide - Ellipse )
-An ellipse is a more general form of the circle element, where you can scale the x and y radius  of the circle separately. Here, in attributes, you indicate the radius  and the position of the center of the ellipse.
-## (Slide - Line)
-The line element takes the positions of two points as parameters and draws a straight line between them.
-## (Slide - Polyline)
-The polyline element is used to create any shape that consists of only straight lines (that is connected at several points). 
-As an attribute you specify a list of coordinates of points.
-## (Slide - Polygon)
-A polygon  is composed of straight line segments connecting a list of points. For polygons, the path automatically connects the last point with the first, creating a closed shape. Here the attribute is the same as for polyline - this is a list of points
-## (Slide -  Path)
-A path is probably the most general shape that can be used in SVG. Using a path element, you can draw all the elements that we saw earlier and  many other things. In this case, the attribute is a list of commands and parameters used by those commands.
-In this example, the indicated commands mean: a pen movement, line drawing and  connecting the last point to the first. 
 ## (Slide – “How can we add svg to our page?”)
 How can we add svg to our page?
 ## (Slide - Svg insertion methods)
