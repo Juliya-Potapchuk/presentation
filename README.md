@@ -40,7 +40,7 @@ SVG can be animated by adding an id attribute or class to SVG tags, and then sty
 3. JavaScript-based animation and interactivity
 Because SVG is just a document which consists of tags, we can use javascript to interact with individual SVG elements.
 In addition to standard JavaScript, there are many JS libraries for animating and interacting with SVG: Vivus.js, Snap.svg and Velocity.js.
-So Css is used for simpler animation. Javascript animations offer more features. As to animations in SMIL format using < animate> tags are not recommended for use and are likely to be removed from browsers in the future.
+So Css is used for simpler animation. Javascript animations offer more features. As to animations in SMIL format using < animate> tag, of course you can use it, but you need to keep in mind that are likely to be removed from browsers in the future.
 ## (Slide – Svg advantages)
 Why should we use svg? Let's analyze the benefits.
 ## (Slide - Scalability)
